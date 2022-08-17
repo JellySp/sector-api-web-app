@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 html, body {
   height: 100%;
@@ -7,4 +8,57 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #2b3141;
 }
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.title-text {
+  margin: 20px;
+  font-size: xxx-large;
+  position: absolute;
+  z-index: 1;
+  font-family: "Varela Round", sans-serif;
+  width: 100%;
+  top: 20%;
+  text-align: center;
+  color: #cbcbcb;
+}
+
+
+input {
+  color: #cbcbcb;
+  caret-color: #cbcbcb !important;
+}
+
+mat-focused, mat-form-field, mat-label, mat-error {
+  /*change color of label*/
+  color: #cbcbcb !important;
+}
+
+.mat-form-field-ripple {
+  background-color: #cbcbcb !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #cbcbcb !important;
+}
+
+.mat-form-field-underline {
+  background-color: #cbcbcb !important;
+}
+
+.mat-input-element::placeholder {
+  color: #cbcbcb;
+}
+
+.mat-form-field-required-marker {
+  color: #cbcbcb;
+}
+.mat-focused .mat-form-field-required-marker {
+  color: #cbcbcb;
+}
+

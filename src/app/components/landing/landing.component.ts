@@ -1,16 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent {
+  username = new FormControl('', [Validators.required]);
 
-  constructor() {
+  getErrorMessage() {
+    if (this.username.hasError('required')) {
+      return 'Please enter your username!'
+    }
+    return this.username.hasError('userNotFound') ? 'User not found' : '';
   }
-
-  ngOnInit(): void {
-  }
-
 }
