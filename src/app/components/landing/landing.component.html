@@ -5,13 +5,12 @@
   <form>
     <mat-form-field>
       <mat-label>Enter your username</mat-label>
-      <input matInput [formControl]="username" required placeholder="Username">
+      <input matInput [formControl]="username" (keyup)="validateUserExists()" required placeholder="Username" >
       <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
   </form>
 
   <h1 class="continue-button" routerLink="">
-    <!--    TODO add router link when you generate a component for it-->
     ➜
   </h1>
 </div>

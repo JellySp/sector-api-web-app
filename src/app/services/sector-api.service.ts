@@ -11,7 +11,7 @@ export class SectorApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  doesUserExist(username: string): Observable<boolean> {
+  doesUserExist(username: string | null): Observable<boolean> {
     return this.httpClient.get<boolean>(API_URL + `/users/exists?userName=${username}`)
   }
 }
