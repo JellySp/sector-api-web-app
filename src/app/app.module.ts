@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {LandingComponent} from './components/landing/landing.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatRadioModule} from "@angular/material/radio";
@@ -30,7 +30,8 @@ import { ErrorComponent } from './components/error/error.component';
     MatInputModule,
     HttpClientModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
