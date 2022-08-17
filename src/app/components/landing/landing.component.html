@@ -2,17 +2,17 @@
 
 <div class="landing-container">
 
-  <form ngForm>
+  <form>
     <mat-form-field>
       <mat-label>Enter your username</mat-label>
-      <input matInput [formControl]="username" (keyup)="validateUserExists()" required placeholder="Username" >
-      <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+      <input matInput [formControl]="userName" (keyup)="validateUserExists()" required placeholder="Username" >
+      <mat-error *ngIf="userName.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
-    <button mat-raised-button class="continue-button">
-      BUTTON
+    <button mat-raised-button
+            class="continue-button"
+            (click)="onSubmit()"
+    [disabled]="userName.invalid">
+      Continue
     </button>
   </form>
-
-
-
 </div>

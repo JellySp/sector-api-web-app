@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {API_URL} from "../app.constants";
+import {API_URL, SECTORS_FIND_PATH} from "../app.constants";
+import {Sector, User} from "../components/user-data/user-data.component";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,15 @@ export class SectorApiService {
   constructor(private httpClient: HttpClient) {
   }
 
-  doesUserExist(username: string | null): Observable<boolean> {
-    return this.httpClient.get<boolean>(API_URL + `/users/exists?userName=${username}`)
+  getSectors(): Observable<Sector[]> {
+    return this.httpClient.get<Sector[]>(API_URL + SECTORS_FIND_PATH)
+  }
+
+  doesUserExist(userName: string | null): Observable<boolean> {
+    return this.httpClient.get<boolean>(API_URL + `/users/exists?userName=${userName}`)
+  }
+
+  getUserByUserName(username: string): Observable<User> {
+    return this.httpClient.get<User>(API_URL + `/users/getByUsername?userName=${username}`)
   }
 }

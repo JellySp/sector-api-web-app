@@ -11,11 +11,15 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatButtonModule} from "@angular/material/button";
+import { UserDataComponent } from './components/user-data/user-data.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    UserDataComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
 import {SectorApiService} from "../../services/sector-api.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,25 +11,31 @@ import {SectorApiService} from "../../services/sector-api.service";
 })
 export class LandingComponent {
 
-  constructor(private sectorApiService: SectorApiService) {
+  constructor(private sectorApiService: SectorApiService,
+              private router: Router) {
   }
 
-  username = new FormControl('', [Validators.required]);
+  userName = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
-    if (this.username.hasError('required')) {
+    if (this.userName.hasError('required')) {
       return 'Please enter your username!'
     }
-    return this.username.hasError('userNotFound') ? 'User not found' : '';
+    return this.userName.hasError('userNotFound') ? 'User not found' : '';
   }
 
   validateUserExists() {
-    this.sectorApiService.doesUserExist(this.username.value).subscribe(
+    this.sectorApiService.doesUserExist(this.userName.value).subscribe(
       response => {
         if (!response) {
-          this.username.setErrors({'userNotFound': true})
+          this.userName.setErrors({'userNotFound': true})
         }
       }
     )
+  }
+
+  onSubmit() {
+    this.router.navigate(['/users/edit'],
+      {queryParams: {userName: this.userName.value}})
   }
 }
