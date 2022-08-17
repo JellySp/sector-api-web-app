@@ -16,6 +16,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.continue-button {
+  width: 100%;
+  overflow: auto;
+  background: none;
+  font-size: large;
+  color: #cbcbcb;
+  transition: 0.5s;
+}
+
+.continue-button:hover {
+  background-color: #cbcbcb;
+  border: #ffffff 2px solid;
+  color: #2b3141;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
 .title-text {
   margin: 20px;
   font-size: xxx-large;

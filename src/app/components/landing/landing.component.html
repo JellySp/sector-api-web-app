@@ -1,16 +1,18 @@
 <p class="title-text">Welcome to Sector Web App</p>
 
-<div class="container">
+<div class="landing-container">
 
-  <form>
+  <form ngForm>
     <mat-form-field>
       <mat-label>Enter your username</mat-label>
       <input matInput [formControl]="username" (keyup)="validateUserExists()" required placeholder="Username" >
       <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
+    <button mat-raised-button class="continue-button">
+      BUTTON
+    </button>
   </form>
 
-  <h1 class="continue-button" routerLink="">
-    ➜
-  </h1>
+
+
 </div>
