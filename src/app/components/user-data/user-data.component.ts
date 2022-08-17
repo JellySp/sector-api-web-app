@@ -9,7 +9,7 @@ import {SectorApiService} from "../../services/sector-api.service";
 })
 export class UserDataComponent implements OnInit {
 
-  username: string
+  userName: string
   user: User
   sectors: Sector[]
 
@@ -20,7 +20,7 @@ export class UserDataComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(
       params => {
-        this.username = params['username']
+        this.userName = params['userName']
       }
     )
     this.getSectors()
@@ -45,7 +45,7 @@ export class UserDataComponent implements OnInit {
   }
 
   getUser(): void {
-    this.sectorApiService.getUserByUserName(this.username).subscribe(
+    this.sectorApiService.getUserByUserName(this.userName).subscribe(
       response => {
         this.user = response
       }

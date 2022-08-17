@@ -20,7 +20,7 @@ export class SectorApiService {
     return this.httpClient.get<boolean>(API_URL + `/users/exists?userName=${userName}`)
   }
 
-  getUserByUserName(username: string): Observable<User> {
-    return this.httpClient.get<User>(API_URL + `/users/getByUsername?userName=${username}`)
+  getUserByUserName(userName: string): Observable<User> {
+    return this.httpClient.get<User>(API_URL + `/users/get?userName=${userName}`)
   }
 }
